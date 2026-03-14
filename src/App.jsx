@@ -9,6 +9,7 @@ import {
 import Home from './pages/home/Home';
 // FIXED: Changed path to lowercase 'order'
 import Order from './pages/order/Order'; 
+import Allproducts from "./pages/allproducts/Allproducts";
 import Cart from './pages/cart/Cart';
 import Dashboard from './pages/admin/dashboard/Dashboard';
 import NoPage from './pages/nopage/NoPage';
@@ -20,8 +21,6 @@ import AddProduct from './pages/admin/page/AddProduct';
 import UpdateProduct from './pages/admin/page/UpdateProduct';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// FIXED: Changed path to lowercase 'allproducts'
-import Allproducts from './pages/allproducts/Allproducts'; 
 
 function App() {
   return (
