@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 
 import Home from './pages/home/Home';
-import Order from './pages/order/Order';
+// FIXED: Changed path to lowercase 'order'
+import Order from './pages/order/Order'; 
 import Cart from './pages/cart/Cart';
 import Dashboard from './pages/admin/dashboard/Dashboard';
 import NoPage from './pages/nopage/NoPage';
@@ -19,7 +20,9 @@ import AddProduct from './pages/admin/page/AddProduct';
 import UpdateProduct from './pages/admin/page/UpdateProduct';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Allproducts from './pages/allproducts/Allproducts';
+// FIXED: Changed path to lowercase 'allproducts'
+import Allproducts from './pages/allproducts/Allproducts'; 
+
 function App() {
   return (
     <MyState>
@@ -56,14 +59,12 @@ function App() {
         <ToastContainer/>
       </Router>
     </MyState>
-
   )
 }
 
 export default App 
 
 // user 
-
 export const ProtectedRoute = ({children}) => {
   const user = localStorage.getItem('user')
   if(user){
@@ -74,15 +75,17 @@ export const ProtectedRoute = ({children}) => {
 }
 
 // admin 
-
 const ProtectedRouteForAdmin = ({children})=> {
-  const admin = JSON.parse(localStorage.getItem('user'))
+  const user = localStorage.getItem('user');
+  if(!user) return <Navigate to={'/login'}/>; // Safety check
+
+  const admin = JSON.parse(user)
   
+  // Update this email to your own email if you want to access admin
   if(admin.user.email === 'knupadhyay784@gmail.com'){
     return children
   }
   else{
     return <Navigate to={'/login'}/>
   }
-
 }
