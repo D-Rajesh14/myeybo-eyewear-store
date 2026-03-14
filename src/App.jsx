@@ -9,7 +9,7 @@ import {
 import Home from './pages/home/Home';
 // FIXED: Changed path to lowercase 'order'
 import Order from './pages/order/Order'; 
-import Allproducts from "./pages/allproducts/Allproducts";
+import Allproducts from "./pages/allproducts/Allproducts.jsx";
 import Cart from './pages/cart/Cart';
 import Dashboard from './pages/admin/dashboard/Dashboard';
 import NoPage from './pages/nopage/NoPage';
